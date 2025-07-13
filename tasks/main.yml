@@ -1,0 +1,10 @@
+---
+# tasks file for simple-playbooks/roles/apacherole
+- name: import tasks.
+  ansible.builtin.import_tasks: httpd.yml
+- name: import firewalld task
+  ansible.builtin.import_tasks: firewalld.yml
+- name: copy template file to remote hosts.
+  ansible.builtin.template:
+    src: index.html.j2
+    dest: /var/www/html/index.html

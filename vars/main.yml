@@ -1,0 +1,6 @@
+---
+# vars file for simple-playbooks/roles/apacherole
+web_pkg: httpd
+web_svc: httpd
+fw_pkg: firewalld
+fw_svc: firewalld

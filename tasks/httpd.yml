@@ -1,0 +1,9 @@
+- name: install {{ web_pkg }} package
+  ansible.builtin.dnf:
+    name: "{{ web_pkg }}"
+    state: present
+- name: Start and enable {{ web_svc }} service
+  ansible.builtin.service:
+    name: "{{ web_svc }}"
+    state: started
+    enabled: true

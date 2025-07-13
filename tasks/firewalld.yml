@@ -1,0 +1,11 @@
+- name: start the firewall service
+  ansible.builtin.service:
+    name: "{{ fw_svc }}"
+    state: started
+    enabled: true 
+- name: allow port
+  ansible.posix.firewalld:
+    service: http
+    permanent: true
+    state: enabled
+    immediate: true
